@@ -4,7 +4,7 @@ const {model, Schema} = require("mongoose");
 
 const trueloveSchema = new Schema({
     title: String,
-    cover: String,
+    tags: [String],
     author: String,
     protagonist: String,
     firstPublish: String,
