@@ -1,14 +1,19 @@
 const express = require("express");
-const mongoose = require("./plugins/db");
+require("./plugins/db");
+//引入trueloveRouter
 const trueloveRouter = require("./routes/truelove");
+//引入extractRouter
+const extractRouter = require("./routes/extract");
 
 const app = express();
 const port = 3000;
 
-app.use(express.json()) // for parsing application/json
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-app.use(trueloveRouter)
+app.use(trueloveRouter);
+app.use(extractRouter);
+
 // app.get("/", (req, res) => {
 //     console.log('有人访问浏览器');
 //     res.send('hhh');
